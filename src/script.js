@@ -23,19 +23,19 @@ function App() {
     document.getElementById('money-minus').innerText = `$${expense}`;
   };
 
-  // useEffect(() => {
-  //   // Load transactions from local storage when the component mounts
-  //   const storedTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
-  //   console.log('Loaded transactions:', storedTransactions); // Debugging output
-  //   setTransactions(storedTransactions);
-  // }, []);
+  useEffect(() => {
+    // Load transactions from local storage when the component mounts
+    const storedTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
+    console.log('Loaded transactions:', storedTransactions); // Debugging output
+    setTransactions(storedTransactions);
+  }, []);
 
-  // // Save transactions to local storage whenever the transactions state changes
-  // useEffect(() => {
-  //   console.log('Saving transactions:', transactions); // Debugging output
-  //   localStorage.setItem('transactions', JSON.stringify(transactions));
-  //   updateValues();
-  // }, [transactions]);
+  // Save transactions to local storage whenever the transactions state changes
+  useEffect(() => {
+    console.log('Saving transactions:', transactions); // Debugging output
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+    updateValues();
+  }, [transactions]);
   
   const addTransaction = (e) => {
     e.preventDefault();
